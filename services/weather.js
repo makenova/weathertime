@@ -6,6 +6,8 @@ const API_KEY = process.env.DARK_SKY_API_KEY;
 const DARKSKYURL = 'https://api.darksky.net/forecast/';
 const APIURL = `${DARKSKYURL}${API_KEY}`;
 
+if (!API_KEY) throw new Error('A Dark Sky API key is required');
+
 function formatApiResponse(response) {
   let data = JSON.parse(response)
 
