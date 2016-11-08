@@ -1,6 +1,5 @@
 var request = require('request');
 var moment = require('moment');
-var winston = require('winston');
 
 const API_KEY = process.env.DARK_SKY_API_KEY;
 const DARKSKYURL = 'https://api.darksky.net/forecast/';
@@ -30,7 +29,7 @@ function weatherRequest(lat, long, callback) {
   let request_url = `${APIURL}/${lat},${long}`;
 
   request(request_url, (err, res, body) => {
-    winston.info('request url:', request_url);
+    console.log('request url:', request_url);
 
     if (err || res.statusCode != 200)
       return callback(err);

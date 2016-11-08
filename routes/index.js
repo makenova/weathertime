@@ -1,6 +1,5 @@
 const moment = require('moment');
 const weather = require('../services/weather');
-const winston = require('winston');
 
 function pastFiveMins (timestamp) {
   const lastCall = moment.unix(timestamp);
@@ -9,7 +8,7 @@ function pastFiveMins (timestamp) {
 }
 
 function getForecast (app, req, res, next) {
-  winston.info(moment().format('h:mm:ss a'),'client area request');
+  console.log(moment().format('h:mm:ss a'),'client area request');
 
   const latitude = req.query.lat || '35.4381759';
   const longitude = req.query.long || '-97.4529094';
@@ -18,14 +17,14 @@ function getForecast (app, req, res, next) {
   // console.log('locals', app.locals)
 
   if (!inMap) {
-    winston.info(moment().format('h:mm:ss a'), 'respond with new request')
+    console.log(moment().format('h:mm:ss a'), 'respond with new request')
     weather.get(app, latitude, longitude, (err, data) => {
       if (err) return next(err);
       app.locals.areaMap[areaKey] = data;
       res.send(data);
     });
   } else if (inMap && pastFiveMins(inMap.timestamp)) {
-    winston.info(moment().format('h:mm:ss a'), 'time elapsed, respond with fresh request')
+    console.log(moment().format('h:mm:ss a'), 'time elapsed, respond with fresh request')
     weather.get(app, latitude, longitude, (err, data) => {
       if (err) return next(err);
       app.locals.areaMap[areaKey] = data;
@@ -33,7 +32,7 @@ function getForecast (app, req, res, next) {
     });
   } else {
     // in the map and not past time
-    winston.info(moment().format('h:mm:ss a'), 'respond from locals')
+    console.log(moment().format('h:mm:ss a'), 'respond from locals')
     res.send(app.locals.areaMap[areaKey]);
   }
 }
