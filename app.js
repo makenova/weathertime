@@ -8,7 +8,6 @@ var errorHandler = require('errorhandler');
 var app = express();
 
 // all environments
-app.use(logger('dev'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -21,9 +20,11 @@ require('./routes')(app);
 
 // development only
 if ('development' == app.get('env')) {
+  app.use(logger('dev'));
   app.use(errorHandler());
   app.use(logger('dev'));
 }
+
 console.log(`NODE_ENV: ${app.get('env')}`);
 
 module.exports = app;
