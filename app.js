@@ -1,21 +1,19 @@
-var path = require('path');
 var express = require('express');
+var path = require('path');
+var favicon = require('serve-favicon');
+var logger = require('morgan');
+var bodyParser = require('body-parser');
+var errorHandler = require('errorhandler');
+
 var app = express();
 
-var methodOverride = require('method-override');
-var bodyParser = require('body-parser');
-var favicon = require('serve-favicon');
-var errorHandler = require('errorhandler');
-var logger = require('morgan');
-
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.use(logger('dev'));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(favicon(__dirname + '/public/favicon.ico'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(methodOverride());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(require('less-middleware')(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -26,8 +24,6 @@ if ('development' == app.get('env')) {
   app.use(errorHandler());
   app.use(logger('dev'));
 }
+console.log(`NODE_ENV: ${app.get('env')}`);
 
-app.listen(app.get('port'), function(){
-  console.log(`Express server listening on port ${app.get('port')}`);
-  console.log(`NODE_ENV: ${app.get('env')}`);
-});
+module.exports = app;

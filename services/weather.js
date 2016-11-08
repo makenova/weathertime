@@ -47,4 +47,10 @@ function getWeather(app, callback){
     weatherRequest(callback);
 }
 
+function getAreaWeather(app, lat, long, callback) {
+console.log('getAreaWeather')
+  return getWeather(app, callback);
+}
+
 module.exports.get = getWeather;
+module.exports.getArea = getAreaWeather;

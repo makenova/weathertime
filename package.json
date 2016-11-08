@@ -1,10 +1,10 @@
 {
   "name": "weathertime",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node app.js",
-    "dev": "LEVEL=info supervisor app.js"
+    "start": "node bin/www",
+    "dev": "LEVEL=info supervisor bin/www"
   },
   "dependencies": {
     "body-parser": "^1.15.2",
