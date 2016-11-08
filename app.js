@@ -19,6 +19,11 @@ require('./routes')(app);
 if ('development' == app.get('env')) {
   app.use(logger('dev'));
   app.use(errorHandler());
+} else {
+  app.use((err, req, res, next) => {
+    res.status(err.status || 500)
+    res.render('error');
+  });
 }
 
 console.log(`NODE_ENV: ${app.get('env')}`);

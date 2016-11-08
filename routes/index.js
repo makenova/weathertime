@@ -41,6 +41,10 @@ function routes (app) {
   app.locals.areaMap = {}; //initialize areaMap
   app.get('/', (req, res) => res.render('index'));
   app.get('/get/forecast', getForecast.bind(null, app));
+  app.get('*', (req, res, next) => {
+    err.status = 404;
+    return next(err);
+  });
 };
 
 module.exports = routes;
