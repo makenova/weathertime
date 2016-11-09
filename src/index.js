@@ -13,7 +13,7 @@ class App extends Component {
     this.state = {
       weaterTimer: null,
       dateTimer: null,
-      weather: {},
+      weather: null,
       date: '...',
       time: '...',
     };
@@ -40,16 +40,10 @@ class App extends Component {
   setWeather() {
     let query = '/get/forecast';
     query = Boolean(location.search) ? query + location.search : query;
-    console.log('query', query);
 
     axios.get(query)
-      .then(response => {
-        console.log('local response', response.data);
-        this.setState({ weather: response.data });
-      })
-      .catch(err => {
-        console.log(err);
-      });
+      .then(response => this.setState({ weather: response.data }))
+      .catch(err => console.log(err));
   }
 
   setTime() {

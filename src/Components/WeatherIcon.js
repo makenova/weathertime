@@ -20,7 +20,12 @@ const WeatherIcon = ({ icon }) => {
     return { color: iconMatch[icon] };
   }
 
-  return <span style={color(icon)}>{icon}</span>;
+
+  function upCase( string ){
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
+  return <span style={color(icon)}>{upCase(icon)}</span>;
 }
 
 WeatherIcon.propTypes = { icon: PropTypes.string.isRequired };
