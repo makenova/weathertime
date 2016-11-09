@@ -4,7 +4,7 @@ export default class DateDisplay extends Component {
   render() {
     return (
       <div>
-        <p>Tuesday, November 8th 2016</p>
+        <p>Tuesday, November 9th 2016</p>
       </div>
     );
   }
