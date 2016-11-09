@@ -1,15 +1,14 @@
-import React, { Component } from 'react';
+import React, { PropTypes } from 'react';
 
-import DateDisplay from './DateDisplay';
-import TimeDisplay from './TimeDisplay';
+const DateTime = ({ date, time }) =>
+  <div>
+    <p>{date}</p>
+    <p>{time}</p>
+  </div>;
 
-export default class Weather extends Component {
-  render() {
-    return (
-      <div>
-        <DateDisplay />
-        <TimeDisplay />
-      </div>
-    );
-  }
-}
+DateTime.propTypes = {
+  date: PropTypes.string.isRequired,
+  time: PropTypes.string.isRequired,
+};
+
+export default DateTime;
