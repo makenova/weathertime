@@ -2,8 +2,10 @@ import React, { PropTypes } from 'react';
 
 const DateTime = ({ date, time }) =>
   <div>
-    <p>{date}</p>
-    <p>{time}</p>
+    <div id="date">{date}</div>
+    <div id="time-row">
+      <div id="time">{time}</div>
+    </div>
   </div>;
 
 DateTime.propTypes = {

@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 import WeatherIcon from './WeatherIcon';
 
 const Weather = ({ weather }) =>
-  <div>
+  <div id="weather">
     <div>
       <WeatherIcon icon={weather.icon} />: {weather.temperature || "80"}
     </div>
