@@ -5,6 +5,7 @@ import moment from 'moment'
 
 import DateTime from './Components/DateTime';
 import Weather from './Components/Weather';
+import DarkSky from './Components/DarkSky';
 
 class App extends Component {
   constructor() {
@@ -63,6 +64,7 @@ class App extends Component {
       <div>
         <DateTime date={this.state.date} time={this.state.time} />
         {weather}
+        <DarkSky />
       </div>
     );
   }
