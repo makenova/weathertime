@@ -49,7 +49,7 @@ class App extends Component {
 
   setTime() {
     let date  = moment().format('dddd, MMMM Do YYYY');
-    let time  = moment().format('h : mm A');
+    let time  = moment().format('h:mm A');
 
     this.setState({ date, time });
   }

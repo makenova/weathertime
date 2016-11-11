@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node bin/www",
+    "start": "webpack -p && node bin/www",
     "dev": "DEBUG=info supervisor bin/www",
     "dev:react-watch":"chokidar ./src/**/*.js -c \"npm run build:react\"",
-    "build:react": "webpack -p",
+    "build:react": "webpack",
     "dev:react": "webpack-dev-server --colors"
   },
   "dependencies": {

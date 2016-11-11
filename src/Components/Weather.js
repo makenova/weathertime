@@ -5,9 +5,9 @@ import WeatherIcon from './WeatherIcon';
 const Weather = ({ weather }) =>
   <div id="weather">
     <div>
-      <WeatherIcon icon={weather.icon} />: {weather.temperature || "80"}
+      <WeatherIcon icon={weather.icon} />: {weather.temperature || "80"} °F
     </div>
-    <div>Feels Like: {weather.feelsLike || "82"}</div>
+    <div>Feels Like: {weather.feelsLike || "82"} °F</div>
   </div>;
 
 Weather.propTypes = {
