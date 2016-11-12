@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import moment from 'moment'
 
 import DateTime from './Components/DateTime';
 import Weather from './Components/Weather';
@@ -48,8 +47,10 @@ class App extends Component {
   }
 
   setTime() {
-    let date  = moment().format('dddd, MMMM Do YYYY');
-    let time  = moment().format('h:mm A');
+    let dateTime = new Date();
+
+    let date  = dateTime.toDateString();
+    let time  = dateTime.toTimeString().slice(0, dateTime.toTimeString().lastIndexOf(':'));
 
     this.setState({ date, time });
   }

@@ -1,5 +1,4 @@
 var request = require('request');
-var moment = require('moment');
 var info = require('debug')('info');
 
 const API_KEY = process.env.DARK_SKY_API_KEY;
