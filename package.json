@@ -5,9 +5,10 @@
   "scripts": {
     "start": "webpack -p && node bin/www",
     "dev": "DEBUG=info supervisor bin/www",
-    "dev:react-watch":"chokidar ./src/**/*.js -c \"npm run build:react\"",
+    "dev:react-watch": "chokidar ./src/**/*.js -c \"npm run build:react\"",
     "build:react": "webpack",
-    "dev:react": "webpack-dev-server --colors"
+    "dev:react": "webpack-dev-server --colors",
+    "test": "ava"
   },
   "dependencies": {
     "axios": "^0.15.2",
@@ -18,12 +19,15 @@
     "less-middleware": "^2.0.1",
     "moment": "^2.15.2",
     "morgan": "^1.7.0",
+    "o-clock": "^0.1.0",
+    "ordinal-numbers": "^1.0.1",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "request": "^2.55.0",
     "serve-favicon": "^2.3.0"
   },
   "devDependencies": {
+    "ava": "^0.16.0",
     "babel-core": "^6.18.2",
     "babel-loader": "^6.2.7",
     "babel-preset-es2015": "^6.18.0",

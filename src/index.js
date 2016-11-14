@@ -6,6 +6,8 @@ import DateTime from './Components/DateTime';
 import Weather from './Components/Weather';
 import DarkSky from './Components/DarkSky';
 
+import Occasion from '../services/occasion';
+
 class App extends Component {
   constructor() {
     super();
@@ -47,12 +49,12 @@ class App extends Component {
   }
 
   setTime() {
-    let dateTime = new Date();
+    let occasion = new Occasion()
 
-    let date  = dateTime.toDateString();
-    let time  = dateTime.toTimeString().slice(0, dateTime.toTimeString().lastIndexOf(':'));
+    let date  = occasion.getDate()
+    let time  = occasion.getTime()
 
-    this.setState({ date, time });
+    this.setState({ date, time })
   }
 
 
