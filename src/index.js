@@ -6,7 +6,7 @@ import DateTime from './Components/DateTime';
 import Weather from './Components/Weather';
 import DarkSky from './Components/DarkSky';
 
-import Occasion from '../services/occasion';
+import Trice from 'trice';
 
 class App extends Component {
   constructor() {
@@ -49,10 +49,10 @@ class App extends Component {
   }
 
   setTime() {
-    let occasion = new Occasion()
+    let trice = new Trice()
 
-    let date  = occasion.getDate()
-    let time  = occasion.getTime()
+    let date  = trice.getDate()
+    let time  = trice.getTime()
 
     this.setState({ date, time })
   }
