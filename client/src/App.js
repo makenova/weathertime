@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
+import './index.css';
+
 
 import DateTime from './Components/DateTime';
 import Weather from './Components/Weather';
@@ -73,4 +74,4 @@ class App extends Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+export default App;
