@@ -41,9 +41,9 @@ function getForecast (app, req, res, next) {
 
 function routes (app) {
   app.locals.areaMap = {}; //initialize areaMap
-  app.get('/', (req, res) => res.sendFile(require('path').join(__dirname, '..', 'client', 'build', 'index.html')));
   app.get('/get/forecast', getForecast.bind(null, app));
   app.get('*', (req, res, next) => {
+    const err = new Error('File not found')
     err.status = 404;
     return next(err);
   });

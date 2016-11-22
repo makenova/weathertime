@@ -21,7 +21,7 @@
     "react-dom": "^15.3.2",
     "request": "^2.55.0",
     "serve-favicon": "^2.3.0",
-    "trice": "^1.0.0"
+    "trice": "git@github.com:makenova/trice.git#uglify"
   },
   "devDependencies": {
     "ava": "^0.17.0",
