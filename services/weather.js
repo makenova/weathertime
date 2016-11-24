@@ -1,5 +1,5 @@
 var request = require('request');
-var moment = require('moment');
+var info = require('debug')('info');
 
 const API_KEY = process.env.DARK_SKY_API_KEY;
 const DARKSKYURL = 'https://api.darksky.net/forecast/';
@@ -29,7 +29,7 @@ function weatherRequest(lat, long, callback) {
   let request_url = `${APIURL}/${lat},${long}`;
 
   request(request_url, (err, res, body) => {
-    console.log('request url:', request_url);
+    info('request url:', request_url);
 
     if (err || res.statusCode != 200)
       return callback(err);

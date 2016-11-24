@@ -3,22 +3,38 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node bin/www",
-    "dev": "LEVEL=info supervisor bin/www"
+    "start": "node bin/www && cd client && npm run build",
+    "server": "DEBUG=info supervisor bin/www",
+    "dev": "nf start -p 3000",
+    "test": "ava"
   },
   "dependencies": {
+    "axios": "^0.15.2",
+    "debug": "^2.3.1",
     "ejs": "^2.3.1",
     "errorhandler": "^1.4.3",
     "express": "^4.14.0",
     "less-middleware": "^2.0.1",
-    "moment": "^2.10.2",
+    "moment": "^2.15.2",
     "morgan": "^1.7.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
     "request": "^2.55.0",
-    "serve-favicon": "^2.3.0"
+    "serve-favicon": "^2.3.0",
+    "trice": "git@github.com:makenova/trice.git#uglify"
   },
   "devDependencies": {
+    "ava": "^0.17.0",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
     "browser-sync": "^2.8.2",
+    "foreman": "^2.0.0",
     "gulp": "^3.9.0",
-    "supervisor": "^0.11.0"
+    "html-webpack-plugin": "^2.24.1",
+    "supervisor": "^0.12.0",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
   }
 }

@@ -1,28 +1,40 @@
-#Weathertime
+# Weathertime
 
-Think "Hammer Time"!!
+A project to learn new web tech.
 
-Weather time is a dash board that displays the date, time and current temperature.  
-##Prerequisites
- * [Node](http://nodejs.org) is required to run **weathertime** locally.  
+Weather time is a dashboard that displays the date, time and current temperature.
+
+## Prerequisites
+
+ * [Node](http://nodejs.org) is required to run **weathertime** locally.
+
  * A [Dark Sky](https://darksky.net/dev/) API key is also required.
-Their API returns JSON and the first 1,000 calls/day are FREE. Don't forget to
-credit them with a "Powered by forcast.io" badge that links to
-[Dark Sky](https://darksky.net/poweredby/).
+Their API returns JSON and the first 1,000 calls/day are FREE.
 
-##Install and Run
- * Clone this repo and navigate into it  
-`git clone git@github.com:makenova/weathertime.git && cd weathertime`
+## Dev
 
- * Install dependencies  
-`npm install`
+ * Clone this repo and navigate into it
 
- * Fill out config data
-  * Open the config.js file
-  * Enter your
-    * Forecast.io API key
-    * Your location latitude
-    * Your location longitude
+```md
+git clone git@github.com:makenova/weathertime.git && cd weathertime
+```
 
- * Run  
-`npm start`
+ * Install dependencies
+
+```sh
+npm install
+```
+
+ * Add **DARK_SKY_API_KEY** environment variable
+
+ * Run
+
+    * `npm start`
+
+## Bugs
+
+Please report any bugs to: https://github.com/makenova/Weathertime/issues
+
+## License
+
+Licensed under the MIT License: https://opensource.org/licenses/MIT
